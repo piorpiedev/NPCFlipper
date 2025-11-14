@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "id": "NPCFlipper",
+  "version": "${version}",
+  "name": "B",
+  "description": "",
+  "authors": ["Piorpie"],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/npcflipper/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-datagen": [
+      "com.piorpie.npcflipper.client.MainDataGenerator"
+    ],
+    "client": [
+      "com.piorpie.npcflipper.client.MainClient"
+    ],
+    "main": [
+      "com.piorpie.npcflipper.Main"
+    ]
+  },
+  "mixins": [
+    "npcflipper.mixins.json",
+    {
+      "config": "npcflipper.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}",
+    "fabric-key-binding-api-v1": "*"
+  }
+}
